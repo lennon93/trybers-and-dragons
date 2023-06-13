@@ -1,8 +1,8 @@
-export default interface SimpleFigther {
+export default interface SimpleFighter {
   lifePoints: number,
   strength: number,
 
-  attack(enemy: SimpleFigther): void;
+  attack(enemy: SimpleFighter): void;
   receiveDamage(attackPoints: number): number;
 
 }
