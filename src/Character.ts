@@ -1,10 +1,10 @@
 import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
-import Figther from './Fighter';
+import Fighter from './Fighter';
 import Race, { Elf } from './Races';
 import getRandomInt from './utils';
 
-export default class Character implements Figther {
+export default class Character implements Fighter {
   private _race: Race;
   private _archetype: Archetype;
   private _maxLifePoints: number;
@@ -67,11 +67,11 @@ export default class Character implements Figther {
     return this._lifePoints;
   }
 
-  attack(enemy: Figther): void {
+  attack(enemy: Fighter): void {
     enemy.receiveDamage(this._strength);
   }
 
-  special(enemy: Figther): void {
+  special(enemy: Fighter): void {
     const specialDamage = this.dexterity + this._strength;
     enemy.receiveDamage(specialDamage);
   }
